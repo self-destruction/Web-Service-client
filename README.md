@@ -1,4 +1,4 @@
 # Лабораторная работа №3 Клиентская часть
 ### Запуск:
-npm install
+npm install  
 node greeter_client.js
