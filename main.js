@@ -26,14 +26,18 @@ function main() {
   };
     
   client.GetBankAnswer(obj, function(err, response) {
-    let approveStatus;
-    if (response.approved) {
-      approveStatus = 'Одобрено.'
-    } else {
-      approveStatus = 'Отказано.'
+    try{
+      let approveStatus;
+      if (response.approved) {
+        approveStatus = 'Одобрено.'
+      } else {
+        approveStatus = 'Отказано.'
+      }
+      console.log('Статус:', approveStatus);
+      console.log('Текст ответа:', response.message);
+    } catch(e) {
+      console.log("Сервер недоступен. Извините за технические неудобства!");
     }
-    console.log('Статус:', approveStatus);
-    console.log('Текст ответа:', response.message);
   });
 }
 
